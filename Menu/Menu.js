@@ -44,8 +44,26 @@ function createMenu(linkItems) {
     link.textContent = item;
     linksContainer.appendChild(link);
   });
+  const body = document.querySelector('body');
+  const bodyOverlay = document.createElement('div');
+  bodyOverlay.classList.add('overlay');
+  bodyOverlay.classList.add('nav-closed');
+  body.prepend(bodyOverlay);
+
+  function overlayToggleMenu() {
+    menu.classList.remove('menu--open');
+    bodyOverlay.classList.add('nav-closed');
+  }
+
+  bodyOverlay.addEventListener('click', overlayToggleMenu);
+
+  function toggleMenu() {
+    menu.classList.toggle('menu--open');
+    bodyOverlay.classList.toggle('nav-closed');
+  }
+
   const menuButton = document.querySelector('.menu-button');
-  menuButton.addEventListener('click', () => menu.classList.toggle('menu--open'));
+  menuButton.addEventListener('click', toggleMenu);
   
   return menu;
 }
