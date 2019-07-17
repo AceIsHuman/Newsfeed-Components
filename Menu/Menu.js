@@ -44,6 +44,12 @@ function createMenu(linkItems) {
     link.textContent = item;
     linksContainer.appendChild(link);
   });
-
+  const menuButton = document.querySelector('.menu-button');
+  menuButton.addEventListener('click', () => menu.classList.toggle('menu--open'));
+  
   return menu;
 }
+
+const menu = createMenu(menuItems);
+const header = document.querySelector('.header');
+header.appendChild(menu);
