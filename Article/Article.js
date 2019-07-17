@@ -135,7 +135,11 @@ function createArticle(content) {
   const expandBtn = document.createElement('span');
   expandBtn.classList.add('expandButton');
   expandBtn.innerText = 'EXPAND';
-  expandBtn.addEventListener('click', () => article.classList.toggle('article-open'));
+  expandBtn.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+    if (expandBtn.innerText === 'EXPAND') expandBtn.innerText = 'CLOSE';
+    else expandBtn.innerText = 'EXPAND';
+});
   article.appendChild(expandBtn);
 
   
