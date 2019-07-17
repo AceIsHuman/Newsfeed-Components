@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Can You Really Trust That New Taco Stand?',
+    date: 'May 26th, 2019',
+    firstParagraph: `Every day is taco ipsum tuesday. Burritos are very tasty. Um, Tabasco? No thanks, do you have any Cholula? Shrimp tacos are tasty tacos! Ooh, with diced onions and a pinch of cilantro. I’ve been following that taco truck around all day. Say taco one more time. Side of rice and beans, please. How do you feel about hard shelled tacos?`,
+
+    secondParagraph: `CARNITAS!! How bout a gosh darn quesadilla? It’s a wonderful morning for breakfast tacos. Side of rice and beans, please. CARNE ASADA!! Yeah, apparently the taco shack was robbed. They left the money but took the tacos.`,
+
+    thirdParagraph: `Fish tacos: lettuce or cabbage, pico de gallo, avocado and a sour cream or citrus/mayonnaise sauce, all placed on top of a corn or flour tortilla. I’ve been following that taco truck around all day. Give me all your tacos. Can you put some peppers and onions on that? Add in a few el Pastor with guac and diced onions. BARBACOA!! It’s taco time all the time.`
   }
 ];
 
