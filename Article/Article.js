@@ -85,6 +85,24 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Can You Really Trust That New Taco Stand?',
+    date: 'May 26th, 2019',
+    firstParagraph: `Every day is taco ipsum tuesday. Burritos are very tasty. Um, Tabasco? No thanks, do you have any Cholula? Shrimp tacos are tasty tacos! Ooh, with diced onions and a pinch of cilantro. I’ve been following that taco truck around all day. Say taco one more time. Side of rice and beans, please. How do you feel about hard shelled tacos?`,
+
+    secondParagraph: `CARNITAS!! How bout a gosh darn quesadilla? It’s a wonderful morning for breakfast tacos. Side of rice and beans, please. CARNE ASADA!! Yeah, apparently the taco shack was robbed. They left the money but took the tacos.`,
+
+    thirdParagraph: `Fish tacos: lettuce or cabbage, pico de gallo, avocado and a sour cream or citrus/mayonnaise sauce, all placed on top of a corn or flour tortilla. I’ve been following that taco truck around all day. Give me all your tacos. Can you put some peppers and onions on that? Add in a few el Pastor with guac and diced onions. BARBACOA!! It’s taco time all the time.`
+  },
+  {
+    title: 'Number of Missing Dogs on The Rise!',
+    date: 'July 10th, 2019',
+    firstParagraph: `Doggo ipsum long woofer boofers extremely cuuuuuute woofer doggo pupper long water shoob, shibe puggorino heckin good boys boofers. You are doing me the shock doge yapper, long water shoob. Long woofer vvv wow such tempt he made many woofs doggorino extremely cuuuuuute vvv ruff snoot thicc, very taste wow super chub long water shoob shibe sub woofer borkf maximum borkdrive.`,
+
+    secondParagraph: `Long doggo borking doggo boofers long doggo thicc, heckin boofers puggorino. He made many woofs pupperino boof, big ol pupper. thicc fat boi.  Dat tungg tho shooberino you are doin me a concern much ruin diet very good spot aqua doggo, thicc borkdrive heckin angery woofer.`,
+
+    thirdParagraph: `Big ol pupper smol extremely cuuuuuute super chub, much ruin diet. Fluffer long water shoob mlem noodle horse, wrinkler borking doggo heckin good boys much ruin diet, heckin angery woofer what a nice floof. Very taste wow most angery pupper I have ever seen very jealous pupper wow such tempt, shoob. Puggo many pats puggo very taste wow doggorino, long doggo ur givin me a spook. very jealous pupper smol. `
   }
 ];
 
@@ -112,3 +130,43 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+function createArticle(content) {
+  const article = document.createElement('div');
+  article.classList.add('article');
+  const title = document.createElement('h2');
+  title.innerText = content.title;
+  article.appendChild(title);
+  const date = document.createElement('p');
+  date.classList.add('date');
+  date.innerText = content.date;
+  article.appendChild(date);
+  const firstParagraph = document.createElement('p');
+  firstParagraph.innerText = content.firstParagraph;
+  article.appendChild(firstParagraph);
+  const secondParagraph = document.createElement('p');
+  secondParagraph.innerText = content.secondParagraph;
+  article.appendChild(secondParagraph);
+  const thirdParagraph = document.createElement('p');
+  thirdParagraph.innerText = content.thirdParagraph;
+  article.appendChild(thirdParagraph);
+  const expandBtn = document.createElement('span');
+  expandBtn.classList.add('expandButton');
+  expandBtn.innerText = 'EXPAND';
+  expandBtn.addEventListener('click', () => {
+    article.classList.toggle('article-open');
+    if (expandBtn.innerText === 'EXPAND') expandBtn.innerText = 'CLOSE';
+    else expandBtn.innerText = 'EXPAND';
+});
+  article.appendChild(expandBtn);
+
+  
+
+  return article;
+}
+
+data.map(articleContent => {
+  const articles = document.querySelector('.articles');
+  let newArticle = createArticle(articleContent);
+  articles.appendChild(newArticle);
+})

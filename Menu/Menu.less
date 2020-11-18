@@ -5,10 +5,11 @@
 }
 
 .menu {
-  display: none;
+  // display: none;
+  opacity: 0;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -350px;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -16,6 +17,7 @@
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+  transition: 0.5s;
 }
 
 .menu ul li{
@@ -26,13 +28,22 @@
 }
 
 .menu--open {
-  transform: translate(0,0);
-  transition: 0.5s;
-  display: block;
+  left: 0;
+  opacity: 1;
 }
 
-.menu--close {
-  transform: translate(-350px, 0);
-  transition: 0.5s;
-  display: block;
+.overlay {
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.5s;
+
+  &.nav-closed {
+    opacity: 0;
+    width: 0%;
+  }
 }
